@@ -67,6 +67,9 @@
               </build>
               <run>
                 <namingStrategy>alias</namingStrategy>
+                <ports>
+                  <port>8080:8080</port>
+                </ports>
               </run>
             </image>
           </images>
