@@ -68,7 +68,7 @@
               <run>
                 <namingStrategy>alias</namingStrategy>
                 <ports>
-                  <port>8080:8080</port>
+                  <port>8888:8080</port>
                 </ports>
               </run>
             </image>
