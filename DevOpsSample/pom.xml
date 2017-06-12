@@ -11,7 +11,8 @@
   <artifactId>DevOpsSample</artifactId>
   <packaging>bwear</packaging>
   <properties>
-    <docker.property.file>docker-dev.properties</docker.property.file>
+    <k8s.property.file>k8s-gcp.properties</k8s.property.file>
+    <docker.property.file>docker-gcp.properties</docker.property.file>
   </properties>
   <build>
     <plugins>
@@ -36,6 +37,7 @@
         <configuration>
           <files>
             <file>${docker.property.file}</file>
+            <file>${k8s.property.file}</file>
           </files>
         </configuration>
       </plugin>
@@ -68,7 +70,7 @@
               <run>
                 <namingStrategy>alias</namingStrategy>
                 <ports>
-                  <port>8888:8080</port>
+                  <port>${bwdocker.port.p0}</port>
                 </ports>
                 <env>
                 	<BW_JAVA_OPTS>${bwdocker.BW_JAVA_OPTS}</BW_JAVA_OPTS>
@@ -76,6 +78,14 @@
               </run>
             </image>
           </images>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>io.fabric8</groupId>
+        <artifactId>fabric8-maven-plugin</artifactId>
+        <version>2.2.102</version>
+        <configuration>
+          <skip>false</skip>
         </configuration>
       </plugin>
     </plugins>
