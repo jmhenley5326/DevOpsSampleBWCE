@@ -76,6 +76,7 @@
                 </ports>
                 <env>
                   <BW_JAVA_OPTS>${bwdocker.BW_JAVA_OPTS}</BW_JAVA_OPTS>
+                  <BW_APP_MONITORING_CONFIG>${bwdocker.BW_APP_MONITORING_CONFIG}</BW_APP_MONITORING_CONFIG>
                 </env>
               </run>
             </image>
