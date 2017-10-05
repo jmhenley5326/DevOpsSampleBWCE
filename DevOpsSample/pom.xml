@@ -14,6 +14,7 @@
     <pcf.property.file>pcfdev.properties</pcf.property.file>
     <k8s.property.file>k8s-gcp.properties</k8s.property.file>
     <docker.property.file>docker-gcp.properties</docker.property.file>
+    <docker.env.property.file>docker-gcp.properties</docker.env.property.file>
   </properties>
   <build>
     <plugins>
@@ -74,10 +75,7 @@
                 <ports>
                   <port>${bwdocker.port.p0}</port>
                 </ports>
-                <env>
-                  <BW_JAVA_OPTS>${bwdocker.BW_JAVA_OPTS}</BW_JAVA_OPTS>
-                  <BW_APP_MONITORING_CONFIG>${bwdocker.BW_APP_MONITORING_CONFIG}</BW_APP_MONITORING_CONFIG>
-                </env>
+                <envPropertyFile>${docker.env.property.file}</envPropertyFile>
               </run>
             </image>
           </images>
