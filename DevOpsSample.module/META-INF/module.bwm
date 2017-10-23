@@ -11,6 +11,19 @@
     </scaext:binding>
     <scact:bindingAdjunct xmi:id="_X4E9sDHVEeeSi-KZjc7a7w" bindingName="RestService"/>
   </sca:service>
+  <sca:service xmi:id="_F4gSYLgfEeeZMqM-Gy6IwQ" name="echo" promote="ComponentEcho/echo">
+    <sca:interface.wsdl xmi:id="_F4oOMLgfEeeZMqM-Gy6IwQ" interface="http://xmlns.example.com/20171023132213PLT#wsdl.interface(echo)" scaext:wsdlLocation="../Processes/devopssample/api/Echo.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_F4vi8LgfEeeZMqM-Gy6IwQ" name="RestService1" path="/echo/{echoString}" docBasePath="http://localhost:7777/DevOpsSample.module" docResourcePath="Echo" basePath="/" connector="devopssample.module.Hello" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/devopssample.api.Echo-Echo.json">
+      <operation xmi:id="_F4wxELgfEeeZMqM-Gy6IwQ" operationName="get" nickname="get-echo" httpMethod="GET" responseStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_WZSkILgfEeeZMqM-Gy6IwQ">
+        <parameterMapping xmi:id="_WZSkIbgfEeeZMqM-Gy6IwQ" parameterName="echoString" parameterType="Path" required="true"/>
+      </parameters>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_F4wxEbgfEeeZMqM-Gy6IwQ" bindingName="RestService1"/>
+  </sca:service>
   <sca:property xmi:id="_x-1bQDHBEeeSi-KZjc7a7w" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_x-_zUDHBEeeSi-KZjc7a7w" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_x_DdsDHBEeeSi-KZjc7a7w" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
@@ -22,6 +35,12 @@
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_X3g9ATHVEeeSi-KZjc7a7w" processName="devopssample.api.Hello"/>
     <sca:service xmi:id="_X3o40DHVEeeSi-KZjc7a7w" name="hello">
       <sca:interface.wsdl xmi:id="_X3qG8DHVEeeSi-KZjc7a7w" interface="http://xmlns.example.com/20170505155655PLT#wsdl.interface(hello)" scaext:wsdlLocation="../Processes/devopssample/api/Hello.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_F1MfsLgfEeeZMqM-Gy6IwQ" name="ComponentEcho" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_F1MfsbgfEeeZMqM-Gy6IwQ" processName="devopssample.api.Echo"/>
+    <sca:service xmi:id="_F1QxILgfEeeZMqM-Gy6IwQ" name="echo">
+      <sca:interface.wsdl xmi:id="_F1RYMLgfEeeZMqM-Gy6IwQ" interface="http://xmlns.example.com/20171023132213PLT#wsdl.interface(echo)" scaext:wsdlLocation="../Processes/devopssample/api/Echo.bwp"/>
     </sca:service>
   </sca:component>
 </sca:composite>

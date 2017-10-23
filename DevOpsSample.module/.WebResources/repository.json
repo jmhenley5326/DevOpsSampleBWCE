@@ -1,7 +1,17 @@
 {
-    "records": [],
-    "resources": [{
-        "location": "Service Descriptors/devopssample.api.Hello-Hello.json",
-        "type": "generated"
-    }]
+    "records": [{
+        "name": "Cloud",
+        "items": [],
+        "url": "https://integration.cloud.tibco.com:443"
+    }],
+    "resources": [
+        {
+            "location": "Service Descriptors/devopssample.api.Hello-Hello.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/devopssample.api.Echo-Echo.json",
+            "type": "generated"
+        }
+    ]
 }
